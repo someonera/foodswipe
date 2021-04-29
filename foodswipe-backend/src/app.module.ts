@@ -6,6 +6,8 @@ import { MealsModule } from './meals/meals.module';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { OrdersModule } from './orders/orders.module';
 import { TagsModule } from './tags/tags.module';
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 @Module({
   imports: [
@@ -14,7 +16,7 @@ import { TagsModule } from './tags/tags.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      username: 'postgres',
+      username: process.env.USERNAME,
       database: 'foodswipe',
       port: 5432,
       autoLoadEntities: true,

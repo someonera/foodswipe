@@ -1,0 +1,28 @@
+{
+  "name": "foodswipe",
+  "version": "1.0.0",
+  "description": "Launch with 'npm start' for development or 'npm build' for production. Using 'ng serve' will not set environmental variables.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/someonera/foodswipe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/someonera/foodswipe/issues"
+  },
+  "homepage": "https://github.com/someonera/foodswipe#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
