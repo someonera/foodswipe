@@ -1,0 +1,17 @@
+<button class="service-btn" [routerLink]="['orders']">Start Service</button>
+<div class="dashboard">
+  <div class="card-base dashboard__menu" *ngIf="meals">
+    <h1 class="dashboard__menu-title">Menu</h1>
+    <button class="dashboard__add-btn" [routerLink]="['editmeal', 'new']">+</button>
+    <ul *ngFor="let meal of meals">
+
+      <li class="card-base dashboard__menu-item">
+        <h2>{{ meal.name }}</h2>
+        <button [routerLink]="['editmeal', meal.id]" class="dashboard__edit-btn">
+            +
+        </button>
+      </li>
+      
+    </ul>
+  </div>
+</div>

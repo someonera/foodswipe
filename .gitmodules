@@ -1,0 +1,9 @@
+[submodule "foodswipe-server"]
+	path = foodswipe-server
+	url = https://github.com/ChristianSchmutte/foodswipe-server.git
+[submodule "foodswipe-backend"]
+	path = foodswipe-backend
+	url = https://github.com/ChristianSchmutte/foodswipe-backend
+[submodule "foodswipe-frontend"]
+	path = foodswipe-frontend
+	url = https://github.com/ChristianSchmutte/foodswipe-frontend

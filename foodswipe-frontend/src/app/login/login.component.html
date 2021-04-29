@@ -1,0 +1,10 @@
+
+<form class="login-form card-base" [formGroup]="loginForm">
+  <label for="email">Email</label>
+  <input name="email" type="text" formControlName="email" >
+
+  <label for="password">Password</label>
+  <input name="password" type="password" formControlName="password" >
+
+  <button name="submit-login" type="submit" (click)="handleLogin()">Login</button>
+</form>

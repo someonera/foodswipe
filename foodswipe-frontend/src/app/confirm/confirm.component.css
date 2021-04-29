@@ -1,0 +1,10 @@
+.confirmcard {
+  height: 40vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.confirmcard h1 {
+  align-self: center;
+  font-size: 1.6rem;
+}

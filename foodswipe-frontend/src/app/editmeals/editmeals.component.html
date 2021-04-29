@@ -1,0 +1,7 @@
+<form class="editmeals-form card-base" [formGroup]="mealEditForm">
+  <input name="name" placeholder="Meal name" type="text" formControlName="name">
+  <input type="text" placeholder="Meal description" name="description"formControlName="description">
+  <input type="number" placeholder="9.99" step="0.01" name="price" formControlName="price">
+  <input type="file" (change)="uploadFile($event)">
+  <button type="submit" (click)="submitChanges()">Save</button>
+</form>

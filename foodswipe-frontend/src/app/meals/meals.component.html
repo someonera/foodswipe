@@ -1,0 +1,20 @@
+<div *ngIf="currentMeal" class="card-base swipecard">
+  <img class="swipecard__image" src="{{currentMeal.image_url}}" alt="{{currentMeal.name}}">
+  <div class="swipecard__body">
+    <h2 class="swipecard__title">
+      {{currentMeal.name}}
+    </h2>
+    <h3 class="swipecard__price-label">
+      €{{currentMeal.price}}
+    </h3>
+    <h3 class="swipecard__price-label">Description</h3>
+    <p class="swipecard__description">
+      {{currentMeal.description}}
+    </p>
+    <div class="swipecard__button-group">
+      <button class="swipcard__dislike" (click)="handleDislike()">x</button>
+      <button class="swipcard__like" (click)="handleLike()">♥︎</button>
+    </div>
+  </div>
+  
+</div>

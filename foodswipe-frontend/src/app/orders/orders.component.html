@@ -1,0 +1,18 @@
+<button class="service-btn" (click)="handleStopService()">Stop Service</button>
+
+<div  class="card-base dashboard__menu" >
+  <h1 class="dashboard__menu-title">Pending Orders</h1>
+  <ul *ngFor="let pendingOrder of pendingOrders" >
+    <li  class="card-base dashboard__menu-item">
+      <h2>{{ pendingOrder.status }}</h2>
+      <button class="service-btn" (click)="handleDelivered(pendingOrder.id)">{{pendingOrder.status}}</button>
+    </li>
+  </ul>
+  <h1 class="dashboard__menu-title">Open Orders</h1>
+  <ul *ngFor="let openOrder of openOrders" >
+    <li  class="card-base dashboard__menu-item">
+      <h2>Pizza Margherita</h2>
+      <button class="service-btn" (click)="handleDelivered(openOrder.id)">ACCEPTED</button>
+    </li>
+  </ul>
+</div>
