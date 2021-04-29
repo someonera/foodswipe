@@ -8,6 +8,7 @@ import { Meal } from '../meals/meal.interface';
 import { MealsService } from '../meals/meals.service';
 import { v4 as uuid } from 'uuid';
 import { finalize } from 'rxjs/operators';
+import {environment} from '../../environments/environment'
 
 @Component({
   selector: 'app-editmeals',
@@ -41,7 +42,7 @@ export class EditMealsComponent implements OnInit, OnDestroy {
       this.imageUrl = meal.image_url ?? this.imageUrl;
       this.mealEditForm = this.constructForm();
     });
-    
+
     this.downloadURL.subscribe((url) => {
       console.log('got new URL', url);
       this.imageUrl = url;
@@ -50,7 +51,7 @@ export class EditMealsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.mealSubscription?.unsubscribe();
-    
+
   }
 
   getMeal(): void {
@@ -106,7 +107,7 @@ export class EditMealsComponent implements OnInit, OnDestroy {
       finalize(() => this.downloadURL = fileRef.getDownloadURL() )
     )
     .subscribe((snap) => {
-      this.imageUrl = `https://firebasestorage.googleapis.com/v0/b/foodswipe-images.appspot.com/o/${snap?.ref.fullPath}?alt=media`;
+      this.imageUrl = `https://firebasestorage.googleapis.com/v0/b/${environment.firebase.storageBucket}/o/${snap?.ref.fullPath}?alt=media`;
       console.log(this.imageUrl);
     })
   }
