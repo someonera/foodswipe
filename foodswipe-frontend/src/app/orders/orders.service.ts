@@ -35,19 +35,19 @@ export class OrdersService {
       takeUntil(this.stopPolling) // to destroy timer
     );
   }
-  
+
   getOpenOrders(): void {
-    const newOrders = this.http.get<Order[]>(`${this.baseUrl}${2}&status=ACCEPTED`);
+    const newOrders = this.http.get<Order[]>(`${this.baseUrl}${this.restaurant.id}&status=ACCEPTED`);
     newOrders.subscribe(orders => this.openOrders$.next(orders));
-    
+
   }
 
   private getPendingOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(`${this.baseUrl}${2}&status=PENDING`);
+    return this.http.get<Order[]>(`${this.baseUrl}${this.restaurant.id}&status=PENDING`);
   }
 
   acceptOrder(id: number): void { // todo fix restaurant id
-    this.http.patch<Order>(`${this.baseUrl}${2}&status=ACCEPTED&id=${id}`, null)
+    this.http.patch<Order>(`${this.baseUrl}${this.restaurant.id}&status=ACCEPTED&id=${id}`, null)
       .subscribe((orders) => {
         console.log(orders);
         this.getOpenOrders();
