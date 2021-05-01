@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/someonera/foodswipe#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "faker": "^5.5.3"
   },
   "config": {
     "commitizen": {
