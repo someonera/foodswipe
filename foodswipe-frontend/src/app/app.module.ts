@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ConfirmComponent } from './confirm/confirm.component'
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
