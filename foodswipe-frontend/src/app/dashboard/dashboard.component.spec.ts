@@ -11,10 +11,23 @@ import { AuthService } from '../login/auth.service';
 import { MealsService } from '../meals/meals.service';
 
 describe('DashboardComponent', () => {
-
+  // let mealsHttpClientSpy: any
+  // let authHttpClientSpy: any
+  // const meal = {
+  //   id: 1,
+  //   name: 'Chese on Toast',
+  //   description: 'Is some cheese on some toast',
+  //   price: 4.99,
+  //   image_url: 'https://placeimg.com/640/480',
+  //   restaurantId: 1
+  // }
     const mockMealListService = new BehaviorSubject<Meal[]>([])
     const mockRestaurantService = new BehaviorSubject<Restaurant>({} as Restaurant)
 
+    // beforeEach(() => {
+    //   mealsHttpClientSpy = jest.fn(() => ({post: jest.fn(), get: jest.fn(() => meal), patch: jest.fn()}))
+    //   authHttpClientSpy = jest.fn(() => ({ post: jest.fn()}))
+    // })
   test('should render', async () => {
 
     const authService = createMock(AuthService);
@@ -27,18 +40,22 @@ describe('DashboardComponent', () => {
     mealsService.createMeal = jest.fn()
     mealsService.getRestaurantMeals = jest.fn()
     mealsService.updateMeal = jest.fn()
-    mealsService.mealList$ = mockMealListService.asObservable()
+    mealsService.mealList$ = mockMealListService
 
     mockMealListService.subscribe(res => console.log(res))
     mockRestaurantService.subscribe(res => console.log(res))
 
     await render(DashboardComponent, {
       imports: [RouterTestingModule],
-      componentProviders: [
-        {provide: MealsService,
-        useValue: mealsService},
-        {provide: AuthService,
+      componentProviders: [{
+          provide: MealsService,
+        useValue: mealsService
+        // new MealsService(mealsHttpClientSpy)
+      },
+        {
+          provide: AuthService,
         useValue: authService
+        // new AuthService(authHttpClientSpy)
       }]
     })
     expect(DashboardComponent).toBeTruthy();
@@ -46,7 +63,6 @@ describe('DashboardComponent', () => {
     mockRestaurantService.next({} as Restaurant)
   });
 })
-
 
 
 //Adding the module RouterTestingModule.withRoutes([]) to the spec class solved my issue.
