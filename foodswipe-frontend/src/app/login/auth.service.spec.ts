@@ -1,16 +1,15 @@
-import { TestBed } from '@angular/core/testing';
-
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
-  let service: AuthService;
+  let authService: AuthService;
+  let httpClientSpy: any
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(AuthService);
+    httpClientSpy = jest.fn(() => ({ post: jest.fn()}))
+    authService = new AuthService(httpClientSpy as any);
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(authService).toBeTruthy();
   });
 });

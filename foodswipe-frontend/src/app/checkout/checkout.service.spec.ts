@@ -1,16 +1,17 @@
-import { TestBed } from '@angular/core/testing';
-
 import { CheckoutService } from './checkout.service';
+import { MealsService } from '../meals/meals.service'
 
 describe('CheckoutService', () => {
-  let service: CheckoutService;
+  let checkoutService: CheckoutService;
+  let httpClientSpy: any
+  let mealsService: MealsService
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CheckoutService);
+    httpClientSpy = jest.fn(()=> ({post: jest.fn()}))
+    checkoutService = new CheckoutService(mealsService, httpClientSpy)
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(checkoutService).toBeTruthy();
   });
 });

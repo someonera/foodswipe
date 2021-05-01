@@ -6,20 +6,20 @@ describe('OrdersComponent', () => {
   let component: OrdersComponent;
   let fixture: ComponentFixture<OrdersComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  beforeEach( () => {
+     TestBed.configureTestingModule({
       declarations: [ OrdersComponent ]
     })
     .compileComponents();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(OrdersComponent);
+  beforeEach(  () => {
+    fixture =  TestBed.createComponent(OrdersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  test('should create', () => {
     expect(component).toBeTruthy();
   });
 });
