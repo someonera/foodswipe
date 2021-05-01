@@ -1,16 +1,18 @@
-import { TestBed } from '@angular/core/testing';
+
 
 import { MealsService } from './meals.service';
 
 describe('MealsService', () => {
-  let service: MealsService;
+  let mealsService: MealsService;
+  let httpClientSpy: any
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(MealsService);
+    httpClientSpy = jest.fn(() => ({post: jest.fn(), get: jest.fn(), patch: jest.fn()}))
+    mealsService = new MealsService(httpClientSpy)
+
   });
 
   it('should be created', () => {
-    expect(service).toBeTruthy();
+    expect(mealsService).toBeTruthy();
   });
 });
