@@ -10,7 +10,7 @@ export class MealsService {
   private readonly baseUrl = 'http://localhost:8080/meals';
   readonly meal$ = new BehaviorSubject<Meal>({} as Meal);
   private mealList: Meal[] = [];
-  readonly mealList$ = new BehaviorSubject<Meal[]>([]);
+   mealList$ = new BehaviorSubject<Meal[]>([]);
 
   private httpOptions = {
     headers: {
@@ -66,9 +66,9 @@ export class MealsService {
         this.meal$.next(this.mealList.shift()!);
       });
   }
-  
+
   updateMeal(meal: Meal): void {
-    
+
     console.log(meal)
     this.http.patch<Meal>(`${this.baseUrl}/${meal.id}`, meal , this.httpOptions)
       .subscribe((remeal) => console.log(remeal));
@@ -76,12 +76,12 @@ export class MealsService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-  
+
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
-  
+
       // TODO: better job of transforming error for user consumption
-  
+
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
