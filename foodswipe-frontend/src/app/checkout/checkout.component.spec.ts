@@ -10,13 +10,9 @@ import { Meal } from '../meals/meal.interface';
 import { MealsService } from '../meals/meals.service';
 import { CheckoutService } from './checkout.service';
 
-const meal$ = new BehaviorSubject<Meal>({} as Meal)
-
 describe('CheckoutComponent', () => {
-
-  test('should render', async () => {
-    const mealsService = createMockWithValues(MealsService, {meal$: meal$})
-
+  beforeEach(async () => {
+    const mealsService = createMockWithValues(MealsService, {meal$: new BehaviorSubject<Meal>({} as Meal)})
     await render(CheckoutComponent, {
       imports: [RouterTestingModule, ReactiveFormsModule],
       providers: [
@@ -27,7 +23,9 @@ describe('CheckoutComponent', () => {
       }
     ]
     })
-    expect(CheckoutComponent).toBeTruthy();
   })
 
+  test('should render', async () => {
+    expect(CheckoutComponent).toBeTruthy();
+  })
 });

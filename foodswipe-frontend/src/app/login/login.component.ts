@@ -13,17 +13,16 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loginForm: FormGroup;
   private subscription?: Subscription;
-  
+
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private router: Router,
-  ) { 
+  ) {
     this.loginForm = this.constructForm();
   }
 
   ngOnInit(): void {
-    
     this.subscription = this.authService.restaurant$.subscribe(restaurant => {
       if (restaurant.id) {
         this.router.navigate(['/dashboard']);

@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   constructor(
     private mealsService: MealsService,
-    private authService: AuthService,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
