@@ -1,15 +1,9 @@
 import { CheckoutService } from './checkout.service';
-import { MealsService } from '../meals/meals.service'
+import { createMock } from '@testing-library/angular/jest-utils';
+
 
 describe('CheckoutService', () => {
-  let checkoutService: CheckoutService;
-  let httpClientSpy: any
-  let mealsService: MealsService
-
-  beforeEach(() => {
-    httpClientSpy = jest.fn(()=> ({post: jest.fn()}))
-    checkoutService = new CheckoutService(mealsService, httpClientSpy)
-  });
+  const checkoutService = createMock(CheckoutService)
 
   it('should be created', () => {
     expect(checkoutService).toBeTruthy();

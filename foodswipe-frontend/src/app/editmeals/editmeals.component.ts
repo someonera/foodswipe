@@ -35,7 +35,6 @@ export class EditMealsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('hi')
     this.getMeal();
     this.mealSubscription = this.mealsService.meal$.subscribe((meal) => {
       this.mealToEdit = meal;

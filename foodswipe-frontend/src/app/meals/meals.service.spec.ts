@@ -1,16 +1,9 @@
-
-
 import { MealsService } from './meals.service';
+import { createMock } from '@testing-library/angular/jest-utils';
 
 describe('MealsService', () => {
-  let mealsService: MealsService;
-  let httpClientSpy: any
 
-  beforeEach(() => {
-    httpClientSpy = jest.fn(() => ({post: jest.fn(), get: jest.fn(), patch: jest.fn()}))
-    mealsService = new MealsService(httpClientSpy)
-
-  });
+  const mealsService = createMock(MealsService)
 
   test('should be created', () => {
     expect(mealsService).toBeTruthy();

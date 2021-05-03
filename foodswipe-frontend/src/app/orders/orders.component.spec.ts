@@ -1,25 +1,31 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { render } from '@testing-library/angular'
 
+import { createMockWithValues } from '@testing-library/angular/jest-utils';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Order } from '../checkout/order.interface';
+
+import {OrdersService} from './orders.service'
 import { OrdersComponent } from './orders.component';
 
+const openOrders$ = new BehaviorSubject<Order[]>([])
+const pendingOrders$ = new BehaviorSubject<Order[]>([])
+
 describe('OrdersComponent', () => {
-  let component: OrdersComponent;
-  let fixture: ComponentFixture<OrdersComponent>;
 
-  beforeEach( () => {
-     TestBed.configureTestingModule({
-      declarations: [ OrdersComponent ]
-    })
-    .compileComponents();
-  });
+test('should render', async () => {
 
-  beforeEach(  () => {
-    fixture =  TestBed.createComponent(OrdersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  const ordersService = createMockWithValues(OrdersService, {openOrders$: openOrders$, pendingOrders$: pendingOrders$.asObservable()})
 
-  test('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  await render(OrdersComponent, {
+    imports: [RouterTestingModule],
+    providers: [
+      {provide: OrdersService,
+      useValue: ordersService}
+    ]
+  })
+
+  expect(OrdersComponent).toBeTruthy();
+})
+
+})

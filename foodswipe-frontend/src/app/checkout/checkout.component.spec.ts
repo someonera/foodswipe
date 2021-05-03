@@ -1,25 +1,33 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular'
 import { CheckoutComponent } from './checkout.component';
+import { provideMock, createMockWithValues } from '@testing-library/angular/jest-utils';
+import { RouterTestingModule } from '@angular/router/testing';
+import { BehaviorSubject } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { Meal } from '../meals/meal.interface';
+
+import { MealsService } from '../meals/meals.service';
+import { CheckoutService } from './checkout.service';
+
+const meal$ = new BehaviorSubject<Meal>({} as Meal)
 
 describe('CheckoutComponent', () => {
-  let component: CheckoutComponent;
-  let fixture: ComponentFixture<CheckoutComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ CheckoutComponent ]
+  test('should render', async () => {
+    const mealsService = createMockWithValues(MealsService, {meal$: meal$})
+
+    await render(CheckoutComponent, {
+      imports: [RouterTestingModule, ReactiveFormsModule],
+      providers: [
+        provideMock(CheckoutService),
+      {
+        provide: MealsService,
+        useValue: mealsService
+      }
+    ]
     })
-    .compileComponents();
-  });
+    expect(CheckoutComponent).toBeTruthy();
+  })
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(CheckoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

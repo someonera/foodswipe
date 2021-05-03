@@ -1,25 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { render } from '@testing-library/angular'
+import { createMockWithValues } from '@testing-library/angular/jest-utils';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AuthService } from './auth.service';
+import { BehaviorSubject } from 'rxjs';
+import { Restaurant } from '../login/restaurant.interface'
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login.component';
 
+const restaurant$ = new BehaviorSubject<Restaurant>({} as Restaurant)
+
 describe('LoginComponent', () => {
-  let component: LoginComponent;
-  let fixture: ComponentFixture<LoginComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+  test('should render', async () => {
+
+    const authService = createMockWithValues(AuthService, {restaurant$: restaurant$})
+
+    await render(LoginComponent, {
+      imports: [RouterTestingModule, ReactiveFormsModule],
+      providers: [
+        {provide: AuthService,
+        useValue: authService}
+      ]
     })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(LoginComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    expect(LoginComponent).toBeTruthy()
+  })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

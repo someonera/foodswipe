@@ -1,25 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { render } from '@testing-library/angular'
+
+
+import { createMockWithValues } from '@testing-library/angular/jest-utils';
+import { MealsService } from '../meals/meals.service';
+import { BehaviorSubject } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Meal } from '../meals/meal.interface';
 
 import { MealsComponent } from './meals.component';
 
+const meal$ = new BehaviorSubject<Meal>({} as Meal)
+
 describe('MealsComponent', () => {
-  let component: MealsComponent;
-  let fixture: ComponentFixture<MealsComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MealsComponent ]
+  test('should render', async () => {
+    const mealsService = createMockWithValues(MealsService, {meal$: meal$})
+
+    await render(MealsComponent, {
+      imports: [RouterTestingModule],
+      providers: [
+        {provide: MealsService,
+        useValue: mealsService}
+      ]
     })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MealsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    expect(MealsComponent).toBeTruthy()
+  })
 });

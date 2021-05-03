@@ -10,7 +10,7 @@ export class MealsService {
   private readonly baseUrl = 'http://localhost:8080/meals';
   readonly meal$ = new BehaviorSubject<Meal>({} as Meal);
   private mealList: Meal[] = [];
-   mealList$ = new BehaviorSubject<Meal[]>([]);
+  readonly mealList$ = new BehaviorSubject<Meal[]>([]);
 
   private httpOptions = {
     headers: {

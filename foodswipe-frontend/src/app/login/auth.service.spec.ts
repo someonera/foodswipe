@@ -1,13 +1,8 @@
 import { AuthService } from './auth.service';
+import { createMock } from '@testing-library/angular/jest-utils';
 
 describe('AuthService', () => {
-  let authService: AuthService;
-  let httpClientSpy: any
-
-  beforeEach(() => {
-    httpClientSpy = jest.fn(() => ({ post: jest.fn()}))
-    authService = new AuthService(httpClientSpy as any);
-  });
+  const authService = createMock(AuthService)
 
   it('should be created', () => {
     expect(authService).toBeTruthy();
