@@ -41,14 +41,9 @@ describe('DashboardComponent', () => {
   });
 
   test('navigate to orders on pressing Start Service', async () => {
-    mealsService.getRestaurantMeals = jest.fn(() => {
-      mealsService.mealList$.next([{id: 1, name: "food", description: "nice",
-            price: 1.5, image_url: "something/something",
-            restaurant: {id: 1, name: "my resto"}}])
-    })
 
     await render(DashboardComponent, {
-      imports: [RouterTestingModule.withRoutes([])],
+      imports: [RouterTestingModule],
       providers: [
         {
           provide: MealsService,
@@ -61,10 +56,10 @@ describe('DashboardComponent', () => {
       ]
     })
 
-    await userEvent.click(screen.getByRole('button', {name: /start service/i}))
-
+    expect(screen.getByRole('button', {name: /start service/i})).toHaveAttribute('ng-reflect-router-link','orders')
+    // expect(screen.getByRole('button', {name: /Menu/i})).toHaveAttribute('ng-reflect-router-link','orders')
+    // expect(screen.getByRole('button', {name: /+/i})).toHaveAttribute('ng-reflect-router-link','orders')
 
   })
-
 
 })
