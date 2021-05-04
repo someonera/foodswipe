@@ -7,7 +7,7 @@ import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   IsUrl,
 } from 'class-validator';
-import { Tag } from 'src/tags/entities/tag.entity';
+import { Tag } from '../../tags/entities/tag.entity';
 export class CreateMealDto {
   @IsNotEmpty()
   @IsNumber()

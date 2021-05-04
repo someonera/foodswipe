@@ -1,6 +1,6 @@
-import { Order } from 'src/orders/entities/order.entity';
-import { Restaurant } from 'src/restaurants/entities/restaurant.entity';
-import { Tag } from 'src/tags/entities/tag.entity';
+import { Order } from '../../orders/entities/order.entity';
+import { Restaurant } from '../../restaurants/entities/restaurant.entity';
+import { Tag } from '../../tags/entities/tag.entity';
 import {
   BaseEntity,
   Column,

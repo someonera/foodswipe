@@ -1,5 +1,5 @@
-import { Meal } from 'src/meals/entities/meal.entity';
-import { Restaurant } from 'src/restaurants/entities/restaurant.entity';
+import { Meal } from '../../meals/entities/meal.entity';
+import { Restaurant } from '../../restaurants/entities/restaurant.entity';
 import {
   BaseEntity,
   Column,

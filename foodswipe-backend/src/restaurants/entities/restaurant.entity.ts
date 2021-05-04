@@ -1,5 +1,5 @@
-import { Meal } from 'src/meals/entities/meal.entity';
-import { Order } from 'src/orders/entities/order.entity';
+import { Meal } from '../../meals/entities/meal.entity';
+import { Order } from '../../orders/entities/order.entity';
 import {
   BaseEntity,
   Column,

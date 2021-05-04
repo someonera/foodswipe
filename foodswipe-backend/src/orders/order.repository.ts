@@ -3,8 +3,8 @@ import {
   NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
-import { Meal } from 'src/meals/entities/meal.entity';
-import { Restaurant } from 'src/restaurants/entities/restaurant.entity';
+import { Meal } from '../meals/entities/meal.entity';
+import { Restaurant } from '../restaurants/entities/restaurant.entity';
 import { EntityRepository, Repository } from 'typeorm';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { FilterOrderDto } from './dto/filter-order.dto';

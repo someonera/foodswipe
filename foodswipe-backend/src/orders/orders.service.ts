@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MealsService } from 'src/meals/meals.service';
-import { RestaurantsService } from 'src/restaurants/restaurants.service';
+import { MealsService } from '../meals/meals.service';
+import { RestaurantsService } from '../restaurants/restaurants.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { FilterOrderDto } from './dto/filter-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
@@ -26,7 +26,7 @@ export class OrdersService {
     restaurantId: number;
   }> {
     const { mealId } = createOrderDto;
-    
+
     const meal = await this.mealsService.findOne(mealId);
     if (!meal)
       throw new NotFoundException(`Could not find meal with id: ${mealId}`);

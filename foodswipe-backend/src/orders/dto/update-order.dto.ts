@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
-import { Tag } from 'src/tags/entities/tag.entity';
+import { Tag } from '../../tags/entities/tag.entity';
 import { OrderStatus } from '../order-status.enum';
 
 export class UpdateOrderDto {

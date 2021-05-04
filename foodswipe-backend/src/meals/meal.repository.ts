@@ -2,7 +2,7 @@ import {
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
-import { Restaurant } from 'src/restaurants/entities/restaurant.entity';
+import { Restaurant } from '../restaurants/entities/restaurant.entity';
 import { EntityRepository, Repository } from 'typeorm';
 import { CreateMealDto } from './dto/create-meal.dto';
 import { UpdateMealDto } from './dto/update-meal.dto';
