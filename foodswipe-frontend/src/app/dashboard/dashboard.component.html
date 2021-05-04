@@ -2,16 +2,17 @@
 <div class="dashboard">
   <div class="card-base dashboard__menu" *ngIf="meals">
     <h1 class="dashboard__menu-title">Menu</h1>
-    <button class="dashboard__add-btn" [routerLink]="['editmeal', 'new']">+</button>
+    <button class="dashboard__add-btn" [routerLink]="['editmeal', 'new']">Add meal</button>
     <ul *ngFor="let meal of meals">
 
       <li class="card-base dashboard__menu-item">
         <h2>{{ meal.name }}</h2>
         <button [routerLink]="['editmeal', meal.id]" class="dashboard__edit-btn">
-            +
+            Edit meal
         </button>
       </li>
 
     </ul>
   </div>
+
 </div>
