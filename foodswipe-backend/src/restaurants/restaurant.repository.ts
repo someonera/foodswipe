@@ -16,8 +16,16 @@ export class RestaurantRepository extends Repository<Restaurant> {
     createRestaurantDto: CreateRestaurantDto,
   ): Promise<Restaurant> {
     const newRestaurant = new Restaurant();
-    const keys = Object.keys(createRestaurantDto);
-    keys.forEach((key) => (newRestaurant[key] = createRestaurantDto[key]));
+    newRestaurant.email = createRestaurantDto.email
+    newRestaurant.name = createRestaurantDto.name
+    newRestaurant.password = createRestaurantDto.password
+    newRestaurant.latitude = createRestaurantDto.latitude
+    newRestaurant.longitude = createRestaurantDto.longitude
+    newRestaurant.meals = []
+    newRestaurant.orders = []
+
+    // const keys = Object.keys(createRestaurantDto);
+    // keys.forEach((key) => (newRestaurant[key] = createRestaurantDto[key]));
 
     try {
       await newRestaurant.save();
