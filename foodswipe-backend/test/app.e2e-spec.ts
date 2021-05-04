@@ -31,7 +31,7 @@ describe( 'AppController (e2e)', () => {
             database: 'foodswipe_e2e_test',
             port: 5432,
             entities: [ './**/*.entity.ts' ],
-            dropSchema: false,
+            dropSchema: true,
             synchronize: true,
           } ) ]
       } )
@@ -51,22 +51,22 @@ describe( 'AppController (e2e)', () => {
     }
   } );
 
-  // it( 'POST /restaurants/register', async () => {
-  //   try {
-  //     const res = await request.agent( app.getHttpServer() )
-  //       .post( '/restuarants/register' )
-  //       .send( {
-  //         email: 'test@email.com',
-  //         name: 'food place',
-  //         password: 'password',
-  //         latitude: 34.45466,
-  //         longitude: -0.4534564
-  //       } )
-  //     expect(res.status).toBe(201)
-  //   } catch ( err ) {
-  //     console.log( err );
-  //   }
-  // } );
+  it( 'POST /restaurants/register', async () => {
+    try {
+      const res = await request.agent( app.getHttpServer() )
+        .post( '/restaurants/register' )
+        .send( {
+          email: 'test@email.com',
+          name: 'food place',
+          password: 'password',
+          latitude: 34.45466,
+          longitude: -0.4534564
+        } )
+      expect(res.status).toBe(201)
+    } catch ( err ) {
+      console.log( err );
+    }
+  } );
 
   it( 'POST /meals', async () => {
     try {

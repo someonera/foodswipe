@@ -23,10 +23,6 @@ export class RestaurantRepository extends Repository<Restaurant> {
     newRestaurant.longitude = createRestaurantDto.longitude
     newRestaurant.meals = []
     newRestaurant.orders = []
-
-    // const keys = Object.keys(createRestaurantDto);
-    // keys.forEach((key) => (newRestaurant[key] = createRestaurantDto[key]));
-
     try {
       await newRestaurant.save();
       return newRestaurant;
