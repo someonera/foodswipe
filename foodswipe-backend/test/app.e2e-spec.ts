@@ -21,7 +21,6 @@ describe( 'AppController (e2e)', () => {
 
   beforeAll( async () => {
     try {
-      console.log( 'setting up module' );
       const moduleRef: TestingModule = await Test.createTestingModule( {
         imports: [ AppModule,
           TypeOrmModule.forRoot( {
@@ -38,65 +37,120 @@ describe( 'AppController (e2e)', () => {
         .compile();
 
       app = moduleRef.createNestApplication();
-      // app.useGlobalPipes(new ValidationPipe())
+      app.useGlobalPipes(new ValidationPipe())
       await app.init();
 
       restaurantRepository = moduleRef.get( 'RestaurantRepository' );
       mealRepository = moduleRef.get( 'MealRepository' );
       orderRepository = moduleRef.get( 'OrderRepository' );
 
-
     } catch ( err ) {
       console.log( err );
     }
   } );
 
-  it( 'POST /restaurants/register', async () => {
-    try {
+  describe('registering a new user', () => {
+    it( 'POST /restaurants/register', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .post( '/restaurants/register' )
+          .send( {
+            email: 'test@email.com',
+            name: 'food place',
+            password: 'password',
+            latitude: 34.45466,
+            longitude: -0.4534564
+          } )
+        expect(res.status).toBe(201)
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
+
+  })
+
+  describe('registered user actions', () => {
+
+    it( 'POST /restaurants/login', async () => {
+        try {
       const res = await request.agent( app.getHttpServer() )
-        .post( '/restaurants/register' )
+        .post( '/restaurants/login' )
         .send( {
           email: 'test@email.com',
-          name: 'food place',
-          password: 'password',
-          latitude: 34.45466,
-          longitude: -0.4534564
+          password: 'password'
         } )
       expect(res.status).toBe(201)
-    } catch ( err ) {
-      console.log( err );
-    }
-  } );
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
 
-  it( 'POST /meals', async () => {
-    try {
-      const res = await request.agent( app.getHttpServer() )
-        .post( '/meals' )
-        .send( {
-          name: 'food',
-          price: 1.99,
-          image_url: 'www.google.com',
-          description: 'is food',
-          restaurantId: 1
-        } )
-      expect(res.status).toBe(201)
-    } catch ( err ) {
-      console.log( err );
-    }
-  } );
+    it( 'POST /meals', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .post( '/meals' )
+          .send( {
+            name: 'food',
+            price: 1.99,
+            image_url: 'www.google.com',
+            description: 'is food',
+            restaurantId: 1
+          } )
+        expect(res.status).toBe(201)
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
 
+    it( 'GET /meals', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .get( '/meals' )
+        expect(res.status).toBe(200)
+        expect(res.body.length).toEqual(1)
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
 
-  it( 'GET /meals', async () => {
-    try {
+    it( 'GET /meals/restaurants/:id', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .get( '/meals/restaurants/1' )
+        expect(res.status).toBe(200)
+        expect(res.body.length).toEqual(1)
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
 
-      const res = await request.agent( app.getHttpServer() )
-        .get( '/meals' )
-      expect(res.status).toBe(200)
-      expect( res.body.length ).toEqual( 1 );
-    } catch ( err ) {
-      console.log( err );
-    }
-  } );
+    it( 'GET /meals/:id', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .get( '/meals/1' )
+        expect(res.status).toBe(200)
+        expect( res.body.id ).toEqual(1)
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
+
+    it( 'PATCH /meals/:id', async () => {
+      try {
+        const res = await request.agent( app.getHttpServer() )
+          .patch( '/meals/1' )
+          .send( {
+            name: 'new food'
+          } )
+        expect(res.status).toBe(200)
+        expect(res.body.name).toEqual('new food')
+      } catch ( err ) {
+        console.log( err );
+      }
+    } );
+
+  })
+
 
 
 
