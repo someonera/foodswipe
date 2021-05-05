@@ -4,11 +4,12 @@
   "compilerOptions": {
     "types": [
       "cypress",
+      "@testing-library/cypress",
       "node"
     ]
   },
   "include": [
     "**/*.ts",
     "../node_modules/cypress"
-   ]
+  ]
 }

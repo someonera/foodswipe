@@ -8,7 +8,7 @@ import { Restaurant } from './restaurant.interface'
 export class AuthService {
 
   private baseUrl: string = 'http://localhost:8080/restaurants';
-   restaurant$ = new BehaviorSubject<Restaurant>({} as Restaurant);
+  readonly restaurant$ = new BehaviorSubject<Restaurant>({} as Restaurant);
   private httpOptions = {
     headers: { 'Content-Type' : 'application/json '}
   };
