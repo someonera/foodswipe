@@ -9,7 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "npm run config -- --environment=dev && ng e2e"
   },
   "private": true,
   "dependencies": {
