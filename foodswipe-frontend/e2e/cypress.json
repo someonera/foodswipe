@@ -3,9 +3,9 @@
   "fixturesFolder": "./src/fixtures",
   "integrationFolder": "./src/integration",
   "pluginsFile": "./src/plugins/index",
-  "supportFile": false,
+  "supportFile": "./src/support/index",
   "video": true,
-  "videosFolder": "../../dist/cypress/{your-project}-e2e/videos",
-  "screenshotsFolder": "../../dist/cypress/{your-project}-e2e/screenshots",
+  "videosFolder": "../../dist/cypress/foodswipe-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/foodswipe-e2e/screenshots",
   "chromeWebSecurity": false
 }

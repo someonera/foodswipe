@@ -1,3 +1,5 @@
+// import '@testing-library/cypress/add-commands';
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -10,7 +12,10 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+
+
+
+Cypress.Commands.add("login", () => { console.log('logging in') })
 //
 //
 // -- This is a child command --
