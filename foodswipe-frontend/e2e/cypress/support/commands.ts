@@ -15,7 +15,7 @@
 
 
 
-Cypress.Commands.add("login", () => { console.log('logging in') })
+// Cypress.Commands.add("login", () => { console.log('logging in') })
 //
 //
 // -- This is a child command --

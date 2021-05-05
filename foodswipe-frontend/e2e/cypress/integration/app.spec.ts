@@ -1,4 +1,4 @@
-import { getGreeting } from '../support/app.po';
+import { getGreeting } from '../../src/app.po'
 
 describe('foodswipe', () => {
   beforeEach(() => cy.visit('/login'));
