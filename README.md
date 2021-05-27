@@ -51,5 +51,5 @@ Uses a PostgreSQL database. Set up a local postgreSQL database called foodswipe.
 | <img src="https://avatars.githubusercontent.com/u/74981447?v=4" width="70" alt="James"/> | <img src="https://avatars.githubusercontent.com/u/74319526?v=4" width="70" alt="Ro" />
 --- | --- 
 **James Chamberlain** | **Ro Thomas** 
-[LinkedIn](https://www.linkedin.com/in/chambermade/) [LinkedIn](https://www.linkedin.com/in/romthomas/) 
-[GitHub](https://github.com/jachamberlain86)  [GitHub](https://github.com/someonera)
+[LinkedIn](https://www.linkedin.com/in/chambermade/) | [LinkedIn](https://www.linkedin.com/in/romthomas/) 
+[GitHub](https://github.com/jachamberlain86) | [GitHub](https://github.com/someonera)
