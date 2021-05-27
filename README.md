@@ -1,7 +1,7 @@
 # FoodSwipe: eat what you're feeling!
-
+<p align="center">
 <img width="700" alt="FoodSwipe" src="https://github.com/someonera/content-assets/blob/main/foodswipe-logo.png">
-
+</p>
 
 FoodSwipe is a food-delivery app that lives at the intersection of Deliveroo and Tinder. Don't spend ages trawling through restaurants, only to read their menu & find there's nothing you fancy. FoodSwipe uses a "food-first" approach to show you delicious meals within your delivery radius - just swipe to order! 
 
