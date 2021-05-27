@@ -7,8 +7,8 @@ FoodSwipe provides a double-ended interface for users and restaurants; restauran
 <code><img alt="AngularJS" src="https://img.shields.io/badge/-AngularJS-E23237?logo=typescript&logoColor=white&style=for-the-badge"></code>
 <code><img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></code>
 <code><img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></code>
-<code><img alt="PostgreSQL" src="https://img.shields.io/badge/-NestJS-E0234E?logo=postgresql&logoColor=white&style=for-the-badge"></code>
-<code><img alt="NestJS" src="https://img.shields.io/badge/-TypeORM-E83524?logoColor=white&style=for-the-badge"></code>
+<code><img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-4169E1?logo=postgresql&logoColor=white&style=for-the-badge"></code>
+<code><img alt="NestJS" src="https://img.shields.io/badge/-NestJS-E0234E?logoColor=white&style=for-the-badge"></code>
 
 <code><img alt="TypeORM" src="https://img.shields.io/badge/-TypeORM-E83524?logoColor=white&style=for-the-badge"></code>
 <code><img alt="Jest" src="https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white&style=for-the-badge"></code>
