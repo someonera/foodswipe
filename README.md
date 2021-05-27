@@ -2,7 +2,7 @@
 <img width="1000" alt="Foodswipe logo" src="https://github.com/jachamberlain86/content-assets/blob/c4ff89ad7d9f5dc12ce889feb0a6344eb4d5e01e/foodswipe-logo.png">
 </p>
 
-<code><img alt="AngularJS" src="https://img.shields.io/badge/-AngularJS-E23237?logo=typescript&logoColor=white&style=for-the-badge"></code>
+<code><img alt="Angular" src="https://img.shields.io/badge/-Angular-DD0031?logo=angular&logoColor=white&style=for-the-badge"></code>
 <code><img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></code>
 <code><img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></code>
 <code><img alt="Firebase" src="https://img.shields.io/badge/-Firebase-FFCA28?logo=firebase&logoColor=black&style=for-the-badge"></code>
