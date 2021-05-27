@@ -35,7 +35,8 @@ FoodSwipe is written in TypeScript and built with
 
 
 **Testing** 
-All end to end tests have been written using [Cypress](https://www.cypress.io/), with unit and integration tests in [Jest](https://jestjs.io/). 
+
+* All end to end tests have been written using [Cypress](https://www.cypress.io/), with unit and integration tests in [Jest](https://jestjs.io/). 
 
 ## Getting Started 
 
