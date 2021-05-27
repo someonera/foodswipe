@@ -4,6 +4,12 @@ FoodSwipe is a food-delivery app that lives at the intersection of Deliveroo and
 
 FoodSwipe provides a double-ended interface for users and restaurants; restaurants can upload unlimited meal options, manage open and pending orders. FoodSwipe makes it easy for them to focus on what they do best (cooking - at least we hope!). 
 
+<code><img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></code>
+<code><img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></code>
+<code><img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white&style=for-the-badge"></code>
+<code><img alt="TypeORM" src="https://img.shields.io/badge/-TypeORM-E83524?logoColor=white&style=for-the-badge"></code>
+<code><img alt="Jest" src="https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white&style=for-the-badge"></code>
+
 
 ## Tech Stack
 
@@ -43,7 +49,7 @@ For the back end:  `npm i` in foodswipe-backend, `npm i && npm run start` in foo
 
 ## Connecting a PostgreSQL database
 
-Uses a PostgreSQL database. Set up a local postgreSQL database called foodswipe. Provide your PostrgreSQL USERNAME in a .env at the root of /foodswipe-backend (see env.example).
+Uses a PostgreSQL database. Set up a local postgreSQL database called foodswipe. Provide your PostrgreSQL USERNAME in a .env in /foodswipe-backend/src.env.e (see env.example).
 
 
 
