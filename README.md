@@ -49,7 +49,7 @@ For the back end:  `npm i` in foodswipe-backend, `npm i && npm run start:dev` (w
 
 ## Connecting a PostgreSQL database
 
-Uses a PostgreSQL database. Set up a local postgreSQL database called foodswipe. Provide your PostrgreSQL USERNAME in a .env in /foodswipe-backend/src.env.e (see env.example).
+Uses a PostgreSQL database, so set up a local postgreSQL database called foodswipe and provide your PostrgreSQL USERNAME in an .env in /foodswipe-backend/src (see env.example).
 
 
 
