@@ -4,6 +4,7 @@ FoodSwipe is a food-delivery app that lives at the intersection of Deliveroo and
 
 FoodSwipe provides a double-ended interface for users and restaurants; restaurants can upload unlimited meal options, manage open and pending orders. FoodSwipe makes it easy for them to focus on what they do best (cooking - at least we hope!). 
 
+<code><img alt="AngularJS" src="https://img.shields.io/badge/-AngularJS-E23237?logo=typescript&logoColor=white&style=for-the-badge"></code>
 <code><img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=for-the-badge"></code>
 <code><img alt="CSS3" src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=for-the-badge"></code>
 <code><img alt="PostgreSQL" src="https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white&style=for-the-badge"></code>
