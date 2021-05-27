@@ -13,6 +13,7 @@ FoodSwipe provides a double-ended interface for users and restaurants; restauran
 <code><img alt="TypeORM" src="https://img.shields.io/badge/-TypeORM-E83524?logoColor=white&style=for-the-badge"></code>
 <code><img alt="Jest" src="https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white&style=for-the-badge"></code>
 <code><img alt="Cypress" src="https://img.shields.io/badge/-Cypress-17202C?logo=cypress&logoColor=white&style=for-the-badge"></code>
+<code><img alt="Testing Library" src="https://img.shields.io/badge/-TestingLibrary-E33332?logo=cypress&logoColor=white&style=for-the-badge"></code>
 
 
 
