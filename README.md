@@ -40,7 +40,7 @@ FoodSwipe is written in TypeScript and built with
 
 ## Getting Started 
 
-Run `https://github.com/someonera/foodswipe.git`
+Run `git clone https://github.com/someonera/foodswipe.git`
 
 Run `npm i` from the root folder
 
