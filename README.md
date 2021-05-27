@@ -1,4 +1,4 @@
-# FoodSwipe - eat what you're feeling
+# FoodSwipe: eat what you're feeling!
 
 FoodSwipe is a food-delivery app that lives at the intersection of Deliveroo and Tinder. Don't spend ages trawling through restaurants, only to read their menu & find there's nothing you fancy. FoodSwipe uses a "food-first" approach to show you delicious meals within your delivery radius - just swipe to order! 
 
@@ -44,7 +44,7 @@ This requires credentials. Create a Firebase app through the Firebase console an
 A storage bucket also needs to be created on this account to handle storing meal images.
 
 ## Server
-For the back end:  `npm i` in foodswipe-backend, `npm i && npm run start` in foodswipe-backend/src
+For the back end:  `npm i` in foodswipe-backend, `npm i && npm run start:dev` (watch mode) or `npm run start:prod` (production mode) in foodswipe-backend/src
 
 
 ## Connecting a PostgreSQL database
